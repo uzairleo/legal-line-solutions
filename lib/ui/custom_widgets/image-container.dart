@@ -5,16 +5,20 @@ import 'package:flutter/material.dart';
 class ImageContainer extends StatelessWidget {
   final double? height, width, size;
   final String? assetImage;
-  ImageContainer({this.height, this.width, this.size, this.assetImage});
+  final fit;
+  ImageContainer(
+      {this.height,
+      this.width,
+      this.size,
+      this.assetImage,
+      this.fit = BoxFit.cover});
   @override
   Widget build(BuildContext context) {
     return Container(
       height: size ?? height,
       width: size ?? width,
       decoration: BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage(assetImage!),
-        ),
+        image: DecorationImage(image: AssetImage(assetImage!), fit: this.fit),
       ),
     );
   }

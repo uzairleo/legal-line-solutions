@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/route_manager.dart';
 import 'package:legal_line_solution/ui/screens/splashScreen.dart';
 
 void main() async {
@@ -24,14 +26,17 @@ class MyApp extends StatelessWidget {
 
         //   ],
         //   child:
-        MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        // primaryColor: SharedConstants().yellow,
-        fontFamily: 'OP_R',
+        ScreenUtilInit(
+      designSize: Size(428, 926),
+      builder: () => GetMaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          // primaryColor: SharedConstants().yellow,
+          fontFamily: 'OP_R',
+        ),
+        home: SplashScreen(),
+        // ),
       ),
-      home: SplashScreen(),
-      // ),
     );
   }
 }

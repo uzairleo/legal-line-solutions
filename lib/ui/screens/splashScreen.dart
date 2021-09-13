@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-
+import 'package:legal_line_solution/core/constants/screen-util.dart';
+import 'package:legal_line_solution/core/constants/strings.dart';
+import 'package:legal_line_solution/ui/custom_widgets/image-container.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import '../../locator.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -36,26 +39,41 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       // backgroundColor: SharedConstants().yellow,
-      body: Column(
-        // crossAxisAlignment: CrossAxisAlignment.center,
-        // mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Spacer(),
-          Center(
-            child: Text(
-              'Legal line solutions',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                // color: SharedConstants().purple,
-                letterSpacing: 1.5,
-                fontSize: MediaQuery.of(context).size.height * 0.0906,
-                fontFamily: 'Bison',
-              ),
-            ),
-          ),
-          // Image.asset("assets/"),
-          Spacer(),
-        ],
+      body: Container(
+        height: 1.sh,
+        width: 1.sw,
+        decoration: BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage("$assets/splash_bg.png"), fit: BoxFit.cover)),
+        child: Column(
+          // crossAxisAlignment: CrossAxisAlignment.center,
+          // mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Spacer(),
+            Center(
+                child: Column(
+              children: [
+                ImageContainer(
+                  assetImage: "$assets/logo.png",
+                  height: 81.h,
+                  width: double.infinity,
+                ),
+                SizedBox(
+                  height: 43.h,
+                ),
+                Container(
+                  height: 42.h,
+                  width: 42.w,
+                  child: SpinKitSpinningLines(
+                    color: Color(0XFF0000FF),
+                  ),
+                )
+              ],
+            )),
+            // Image.asset("assets/"),
+            Spacer(),
+          ],
+        ),
       ),
     );
   }
