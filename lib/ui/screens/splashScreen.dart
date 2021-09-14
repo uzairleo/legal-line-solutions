@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:legal_line_solution/core/constants/screen-util.dart';
 import 'package:legal_line_solution/core/constants/strings.dart';
 import 'package:legal_line_solution/ui/custom_widgets/image-container.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:legal_line_solution/ui/screens/login/login-screen.dart';
 import '../../locator.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -20,6 +22,9 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   _waitAndNavigate() async {
+    await Future.delayed(Duration(seconds: 3), () {
+      Get.offAll(() => LoginScreen(), transition: Transition.downToUp);
+    });
     // await _locationService.getCurrentLocation();
     // await _notificationServices.initConfigure();
     // await _notificationServices.sendNotification(
