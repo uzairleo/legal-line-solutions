@@ -6,6 +6,7 @@ import 'package:legal_line_solution/ui/screens/forgot_password/forgot-password-s
 import 'package:legal_line_solution/ui/screens/home/home-screen.dart';
 import 'package:legal_line_solution/ui/screens/login/login-screen.dart';
 import 'package:legal_line_solution/ui/screens/notifications/notification-screen.dart';
+import 'package:legal_line_solution/ui/screens/profile/profile-screen.dart';
 import 'package:legal_line_solution/ui/screens/splashScreen.dart';
 import 'package:legal_line_solution/ui/screens/surveys/surveys-screen.dart';
 
@@ -37,7 +38,8 @@ class MyApp extends StatelessWidget {
       builder: () => GetMaterialApp(
           theme: ThemeData(),
           debugShowCheckedModeBanner: false,
-          home: NotificationScreen()
+          home: ProfileScreen()
+          // NotificationScreen()
           // SurveyScreen()
           // ChatScreen()
           // HomeScreen()
