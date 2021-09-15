@@ -6,6 +6,7 @@ import 'package:legal_line_solution/ui/screens/forgot_password/forgot-password-s
 import 'package:legal_line_solution/ui/screens/home/home-screen.dart';
 import 'package:legal_line_solution/ui/screens/login/login-screen.dart';
 import 'package:legal_line_solution/ui/screens/splashScreen.dart';
+import 'package:legal_line_solution/ui/screens/surveys/surveys-screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -35,7 +36,8 @@ class MyApp extends StatelessWidget {
       builder: () => GetMaterialApp(
           theme: ThemeData(),
           debugShowCheckedModeBanner: false,
-          home: ChatScreen()
+          home: SurveyScreen()
+          // ChatScreen()
           // HomeScreen()
           // ForgotPassword()
           // LoginScreen()
