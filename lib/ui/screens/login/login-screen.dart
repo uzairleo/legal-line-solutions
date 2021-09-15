@@ -98,6 +98,7 @@ class LoginScreen extends StatelessWidget {
             height: 39.h,
           ),
           TextFormField(
+            obscureText: true,
             decoration: InputDecoration(
                 labelText: "Password",
                 labelStyle: bodyTextStyle.copyWith(
