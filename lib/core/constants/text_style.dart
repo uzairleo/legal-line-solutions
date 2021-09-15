@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-import 'colors.dart';
+final sansPro = GoogleFonts.sourceSansPro().fontFamily;
+
+final roboto = GoogleFonts.roboto().fontFamily;
 
 TextStyle headingTextStyle = TextStyle(
-  fontFamily: "OpenSans",
+  fontFamily: sansPro,
   fontSize: 25,
   fontWeight: FontWeight.w600,
 );
@@ -11,7 +14,7 @@ TextStyle headingTextStyle2 = TextStyle(
   fontSize: 25,
   fontWeight: FontWeight.w600,
   color: Colors.black,
-  fontFamily: 'Poppins',
+  fontFamily: roboto,
 );
 
 ///
@@ -33,51 +36,34 @@ const BorderRadius chatBorderRadiusLeft = BorderRadius.only(
 );
 
 TextStyle subBodyTextStyle = TextStyle(
-  fontFamily: "OpenSans",
+  fontFamily: roboto,
   fontSize: 14,
-);
-TextStyle subBodyTextStyle2 = TextStyle(
-  fontSize: 14,
-  color: Colors.black,
-  fontFamily: 'Poppins',
 );
 
-const largeheadingTextStyle = TextStyle(
+final largeheadingTextStyle = TextStyle(
   fontWeight: FontWeight.bold,
   fontSize: 30,
   color: Colors.black,
-  fontFamily: 'Poppins',
+  fontFamily: sansPro,
 );
-const largeheadingTextStyle2 = TextStyle(
-  fontWeight: FontWeight.bold,
-  fontSize: 30,
-  color: Colors.black,
-  fontFamily: 'OpenSans',
-);
-const subHeadingTextStyle = TextStyle(
+final subHeadingTextStyle = TextStyle(
   fontWeight: FontWeight.w500,
   fontSize: 18,
   color: Colors.black,
-  fontFamily: 'Poppins',
+  fontFamily: sansPro,
 );
 
-const bodyTextStyle = TextStyle(
+final bodyTextStyle = TextStyle(
   fontSize: 16,
   color: Colors.black,
-  fontFamily: 'Poppins',
+  fontFamily: roboto,
 );
 
 TextStyle buttonTextStyle = TextStyle(
-  fontFamily: "OpenSans",
+  fontFamily: roboto,
   fontSize: 16,
   fontWeight: FontWeight.bold,
   color: Colors.white,
-);
-const buttonTextStyle2 = TextStyle(
-  fontSize: 12,
-  color: Colors.black,
-  fontWeight: FontWeight.w600,
-  fontFamily: 'Poppins',
 );
 
 const labelTextStyle = TextStyle(
@@ -86,38 +72,8 @@ const labelTextStyle = TextStyle(
   color: Color.fromARGB(255, 106, 113, 100),
 );
 
-const labelTextStyle2 = TextStyle(
-  fontSize: 12,
-  fontFamily: 'Poppins',
-  color: Colors.black,
-);
-
 const categoryTextStyle = TextStyle(
   color: Colors.black,
-  fontSize: 12,
-  fontWeight: FontWeight.w500,
-  fontFamily: 'Poppins',
-);
-const categoryTextStyle3 = TextStyle(
-  color: Colors.black,
-  fontSize: 12,
-  fontWeight: FontWeight.w600,
-  fontFamily: 'Poppins',
-);
-
-const tabBarTextStyle = TextStyle(
-  fontSize: 12,
-  fontWeight: FontWeight.w500,
-  fontFamily: 'Poppins',
-);
-const tabBarTextStyle2 = TextStyle(
-  fontSize: 12,
-  fontWeight: FontWeight.w600,
-  fontFamily: 'Poppins',
-);
-
-const categoryTextStyle2 = TextStyle(
-  color: Color.fromARGB(255, 106, 113, 100),
   fontSize: 12,
   fontWeight: FontWeight.w500,
   fontFamily: 'Poppins',
