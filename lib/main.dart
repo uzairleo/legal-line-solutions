@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/route_manager.dart';
-import 'package:legal_line_solution/ui/home/home-screen.dart';
+import 'package:legal_line_solution/ui/screens/chat/chat-screen.dart';
 import 'package:legal_line_solution/ui/screens/forgot_password/forgot-password-screen.dart';
+import 'package:legal_line_solution/ui/screens/home/home-screen.dart';
 import 'package:legal_line_solution/ui/screens/login/login-screen.dart';
 import 'package:legal_line_solution/ui/screens/splashScreen.dart';
 
@@ -12,9 +13,9 @@ void main() async {
   ///
   ///firebase init
   ///
+
   // await Firebase.initializeApp();
   //now finally setup locator
-
   // setupLocator();
 
   runApp(MyApp());
@@ -34,7 +35,8 @@ class MyApp extends StatelessWidget {
       builder: () => GetMaterialApp(
           theme: ThemeData(),
           debugShowCheckedModeBanner: false,
-          home: HomeScreen()
+          home: ChatScreen()
+          // HomeScreen()
           // ForgotPassword()
           // LoginScreen()
           // SplashScreen(),
