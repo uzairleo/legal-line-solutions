@@ -9,6 +9,7 @@ import 'package:legal_line_solution/ui/screens/manage_user/manager-user-screen.d
 import 'package:legal_line_solution/ui/screens/notifications/notification-screen.dart';
 import 'package:legal_line_solution/ui/screens/profile/profile-screen.dart';
 import 'package:legal_line_solution/ui/screens/splashScreen.dart';
+import 'package:legal_line_solution/ui/screens/staff_directory/staff-directory-screen.dart';
 import 'package:legal_line_solution/ui/screens/surveys/surveys-screen.dart';
 
 void main() async {
@@ -39,7 +40,8 @@ class MyApp extends StatelessWidget {
       builder: () => GetMaterialApp(
           theme: ThemeData(),
           debugShowCheckedModeBanner: false,
-          home: ManageUserScreen()
+          home: StaffDirectoryScreen()
+          //  ManageUserScreen()
           // ProfileScreen()
           // NotificationScreen()
           // SurveyScreen()
