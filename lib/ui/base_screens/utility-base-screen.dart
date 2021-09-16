@@ -8,8 +8,12 @@ class UtilityBaseScreen extends StatelessWidget {
   final body;
   final bgAsset;
   final appTitle;
+  final avoidSCSV;
   UtilityBaseScreen(
-      {this.body, this.bgAsset = "$assets/bg_light.png", this.appTitle});
+      {this.body,
+      this.avoidSCSV = false,
+      this.bgAsset = "$assets/bg_light.png",
+      this.appTitle});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,17 +44,19 @@ class UtilityBaseScreen extends StatelessWidget {
         decoration: BoxDecoration(
             image:
                 DecorationImage(image: AssetImage(bgAsset), fit: BoxFit.cover)),
-        child: SingleChildScrollView(
-          physics: BouncingScrollPhysics(),
-          child: Column(
-            children: [
-              ///
-              ///child
-              ///
-              body ?? Container()
-            ],
-          ),
-        ),
+        child: avoidSCSV
+            ? body
+            : SingleChildScrollView(
+                physics: BouncingScrollPhysics(),
+                child: Column(
+                  children: [
+                    ///
+                    ///child
+                    ///
+                    body ?? Container()
+                  ],
+                ),
+              ),
       ),
     );
   }
