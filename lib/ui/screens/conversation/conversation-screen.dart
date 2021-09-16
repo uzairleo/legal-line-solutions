@@ -6,7 +6,7 @@ import 'package:legal_line_solution/core/constants/text_style.dart';
 import 'package:legal_line_solution/ui/custom_widgets/conversation-tile.dart';
 import 'package:legal_line_solution/ui/custom_widgets/image-container.dart';
 
-class ChatScreen extends StatelessWidget {
+class ConversationScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

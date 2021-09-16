@@ -41,6 +41,9 @@ class _StaffDirectoryTilState extends State<StaffDirectoryTil> {
           children: [
             Row(
               children: [
+                SizedBox(
+                  width: 14.w,
+                ),
                 Transform.scale(
                     scale: 0.8,
                     child: Checkbox(
