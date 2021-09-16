@@ -8,7 +8,7 @@ import 'package:legal_line_solution/ui/custom_widgets/image-container.dart';
 import 'package:legal_line_solution/ui/custom_widgets/notification-tile.dart';
 import 'package:legal_line_solution/ui/custom_widgets/rectangle-button.dart';
 
-class ProfileScreen extends StatelessWidget {
+class ManageUserScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return UtilityBaseScreen(
@@ -21,7 +21,7 @@ class ProfileScreen extends StatelessWidget {
       appTitle: Column(
         children: [
           Text(
-            "Profile",
+            "Manage User",
             style: bodyTextStyle.copyWith(
                 fontSize: 16.sp, fontFamily: roboto, color: Colors.white),
           )
@@ -355,6 +355,15 @@ class ProfileScreen extends StatelessWidget {
                     SizedBox(height: 15.h),
                   ],
                 ),
+                RectangularButton(
+                  title: "Delete User",
+                  buttonColor: Colors.orange,
+                  onTap: () {},
+                  width: 138.w,
+                  radius: 6.0,
+                  textStyle: bodyTextStyle.copyWith(
+                      fontFamily: roboto, fontSize: 16.sp, color: Colors.white),
+                )
               ],
             ),
           )
