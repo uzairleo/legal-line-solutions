@@ -55,10 +55,10 @@ class ChatViewModel extends BaseViewModel {
         message: "Hello John, what are you going to do this weekend?",
         timeStamp: "17:18 "));
     messagesList.add(Message(
-        type: MessageType.text,
+        type: MessageType.audio,
         senderId: "SenderIdDummy1",
         message: "Nothing Planned and you?",
-        timeStamp: "17:18 "));
+        timeStamp: "17:19 "));
 
     messagesList.add(Message(
         type: MessageType.text,
@@ -80,28 +80,6 @@ class ChatViewModel extends BaseViewModel {
         type: MessageType.text,
         senderId: "SenderIdDummy1",
         message: "Nothing Planned and you?",
-        timeStamp: "17:18 "));
-
-    messagesList.add(Message(
-        type: MessageType.text,
-        senderId: "SenderIdDummy0",
-        message: "Same to you ok no worries brother?",
-        timeStamp: "17:18 "));
-    messagesList.add(Message(
-        type: MessageType.text,
-        senderId: "SenderIdDummy0",
-        message: "Hello John, what are you going to do this weekend?",
-        timeStamp: "17:18 "));
-    messagesList.add(Message(
-        type: MessageType.text,
-        senderId: "SenderIdDummy1",
-        message: "Nothing Planned and you?",
-        timeStamp: "17:18 "));
-
-    messagesList.add(Message(
-        type: MessageType.text,
-        senderId: "SenderIdDummy0",
-        message: "Same to you ok no worries brother?",
         timeStamp: "17:18 "));
 
     messagesList.add(Message(

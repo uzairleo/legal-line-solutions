@@ -87,10 +87,10 @@ class ChatScreen extends StatelessWidget {
           bool isMe = index % 2 == 0 ? true : false;
 
           print('isMe: $isMe');
-          if (model.reversedMessagesList[index].type == MessageType.file) {
+          if (model.reversedMessagesList[index].type == MessageType.audio) {
             return isMe
-                ? FileMessageRight(model.reversedMessagesList[index])
-                : FileMessageLeft(model.reversedMessagesList[index]);
+                ? AudioMessageRight(model.reversedMessagesList[index])
+                : AudioMessageLeft(model.reversedMessagesList[index]);
           } else if (model.reversedMessagesList[index].type ==
               MessageType.image) {
             return isMe
