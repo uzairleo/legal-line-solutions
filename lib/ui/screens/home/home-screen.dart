@@ -6,16 +6,37 @@ import 'package:legal_line_solution/core/constants/strings.dart';
 import 'package:legal_line_solution/core/constants/text_style.dart';
 import 'package:legal_line_solution/ui/custom_widgets/image-container.dart';
 import 'package:legal_line_solution/ui/custom_widgets/rectangle-button.dart';
+import 'package:legal_line_solution/ui/screens/home/drawer/drawer-screen.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
+  @override
+  _HomeScreenState createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      ///
+      ///drawer
+      ///
+      drawer: DrawerScreen(),
+
+      ///
+      ///appbar
+      ///
       appBar: AppBar(
         backgroundColor: Colors.white,
-        leading: Icon(
-          Icons.menu,
-          color: Color(0XFF151F4B),
+        leading: Builder(
+          builder: (context) => GestureDetector(
+            onTap: () {
+              Scaffold.of(context).openDrawer();
+            },
+            child: Icon(
+              Icons.menu,
+              color: Color(0XFF151F4B),
+            ),
+          ),
         ),
         centerTitle: true,
         title: //logo

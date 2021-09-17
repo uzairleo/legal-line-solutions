@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/route_manager.dart';
 import 'package:legal_line_solution/ui/screens/chat/chat-scree.dart';
 import 'package:legal_line_solution/ui/screens/conversation/conversation-screen.dart';
+import 'package:legal_line_solution/ui/screens/home/home-screen.dart';
 import 'package:legal_line_solution/ui/screens/staff_directory/staff-directory-screen.dart';
 import 'package:legal_line_solution/ui/screens/surveys/create_survey/create-survey-screen.dart';
 import 'package:legal_line_solution/ui/screens/surveys/manage_survey/manage-survey-screen.dart';
@@ -36,7 +37,8 @@ class MyApp extends StatelessWidget {
       builder: () => GetMaterialApp(
           theme: ThemeData(),
           debugShowCheckedModeBanner: false,
-          home: ManageSurveyDetailScreen()
+          home: HomeScreen()
+          //  ManageSurveyDetailScreen()
           // ManageSurveyScreen()
           // CreateSurveyScreen()
           // ChatScreen()
