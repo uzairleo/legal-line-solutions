@@ -8,7 +8,7 @@ import 'package:legal_line_solution/ui/custom_widgets/image-container.dart';
 import 'package:legal_line_solution/ui/custom_widgets/notification-tile.dart';
 import 'package:legal_line_solution/ui/custom_widgets/rectangle-button.dart';
 
-class ManageUserScreen extends StatelessWidget {
+class EditManageUserScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return UtilityBaseScreen(
