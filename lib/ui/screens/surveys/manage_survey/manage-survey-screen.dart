@@ -42,6 +42,9 @@ class ManageSurveyScreen extends StatelessWidget {
           ///header tab
           ///
           header(),
+          SizedBox(
+            height: 5.h,
+          ),
 
           ///
           ///listview of surveys tile
@@ -56,13 +59,121 @@ class ManageSurveyScreen extends StatelessWidget {
   ///header tab
   ///
   header() {
-    return Container();
+    return Container(
+        height: 55.h,
+        decoration: BoxDecoration(
+            color: Colors.white,
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey.withOpacity(0.3),
+                blurRadius: 8, // has the effect of softening the shadow
+                spreadRadius: 1.2, // has the effect of extending the shadow
+                offset: Offset(
+                  0, // horizontal, move right 10
+                  0.4, // vertical, move down 10
+                ),
+              ),
+            ],
+            borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(8.0.r),
+                topRight: Radius.circular(8.0.r))),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 17.40),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text("Survey Title",
+                  style: bodyTextStyle.copyWith(
+                    fontSize: 14.sp,
+                    fontFamily: roboto,
+                  )),
+              Text("Date",
+                  style: bodyTextStyle.copyWith(
+                    fontSize: 14.sp,
+                    fontFamily: roboto,
+                  )),
+              Text("Id Number",
+                  style: bodyTextStyle.copyWith(
+                    fontSize: 14.sp,
+                    fontFamily: roboto,
+                  )),
+              Text("Full Details",
+                  style: bodyTextStyle.copyWith(
+                    fontSize: 14.sp,
+                    fontFamily: roboto,
+                  ))
+            ],
+          ),
+        ));
   }
 
   ///
   ///listview of surveys tile
   ///
   surveyList() {
-    return Container();
+    return ListView.builder(
+        itemCount: 6,
+        shrinkWrap: true,
+        physics: BouncingScrollPhysics(),
+        itemBuilder: (context, index) => SurveyTile(index));
+  }
+}
+
+class SurveyTile extends StatelessWidget {
+  final int index;
+  const SurveyTile(this.index);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 5.0),
+      child: Container(
+        height: 41.h,
+        decoration: BoxDecoration(
+          color: Colors.white,
+        ),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 17.40),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text("Client sac",
+                  style: bodyTextStyle.copyWith(
+                    fontSize: 14.sp,
+                    color: Colors.black54,
+                    fontFamily: roboto,
+                  )),
+              Text("08/01/21",
+                  style: bodyTextStyle.copyWith(
+                    fontSize: 14.sp,
+                    color: Colors.black54,
+                    fontFamily: roboto,
+                  )),
+              Text("0346240",
+                  style: bodyTextStyle.copyWith(
+                    fontSize: 14.sp,
+                    fontFamily: roboto,
+                    color: Colors.black54,
+                  )),
+              Container(
+                height: 26.h,
+                width: 64.w,
+                decoration: BoxDecoration(
+                    color: index % 2 == 0 ? Colors.orange : primaryColor,
+                    borderRadius: BorderRadius.circular(4.0.r)),
+                child: Center(
+                  child: Text("View",
+                      style: bodyTextStyle.copyWith(
+                        fontSize: 12.sp,
+                        color: Colors.white,
+                        fontFamily: roboto,
+                      )),
+                ),
+              )
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }

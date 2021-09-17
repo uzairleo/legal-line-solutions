@@ -5,6 +5,7 @@ import 'package:legal_line_solution/ui/screens/chat/chat-scree.dart';
 import 'package:legal_line_solution/ui/screens/conversation/conversation-screen.dart';
 import 'package:legal_line_solution/ui/screens/staff_directory/staff-directory-screen.dart';
 import 'package:legal_line_solution/ui/screens/surveys/create_survey/create-survey-screen.dart';
+import 'package:legal_line_solution/ui/screens/surveys/manage_survey/manage-survey-screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -34,7 +35,8 @@ class MyApp extends StatelessWidget {
       builder: () => GetMaterialApp(
           theme: ThemeData(),
           debugShowCheckedModeBanner: false,
-          home: CreateSurveyScreen()
+          home: ManageSurveyScreen()
+          // CreateSurveyScreen()
           // ChatScreen()
           //  ManageUserScreen()
           // ProfileScreen()
