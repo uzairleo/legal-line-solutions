@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:legal_line_solution/core/constants/colors.dart';
 import 'package:legal_line_solution/core/constants/screen-util.dart';
 import 'package:legal_line_solution/core/constants/strings.dart';
@@ -6,6 +7,7 @@ import 'package:legal_line_solution/core/constants/text_style.dart';
 import 'package:legal_line_solution/ui/base_screens/utility-base-screen.dart';
 import 'package:legal_line_solution/ui/custom_widgets/image-container.dart';
 import 'package:legal_line_solution/ui/custom_widgets/notification-tile.dart';
+import 'package:legal_line_solution/ui/screens/surveys/manage_survey/survey_detail/manage-survey-detail-screen.dart';
 
 class ManageSurveyScreen extends StatelessWidget {
   @override
@@ -127,50 +129,58 @@ class SurveyTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 5.0),
-      child: Container(
-        height: 41.h,
-        decoration: BoxDecoration(
-          color: Colors.white,
-        ),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 17.40),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text("Client sac",
-                  style: bodyTextStyle.copyWith(
-                    fontSize: 14.sp,
-                    color: Colors.black54,
-                    fontFamily: roboto,
-                  )),
-              Text("08/01/21",
-                  style: bodyTextStyle.copyWith(
-                    fontSize: 14.sp,
-                    color: Colors.black54,
-                    fontFamily: roboto,
-                  )),
-              Text("0346240",
-                  style: bodyTextStyle.copyWith(
-                    fontSize: 14.sp,
-                    fontFamily: roboto,
-                    color: Colors.black54,
-                  )),
-              Container(
-                height: 26.h,
-                width: 64.w,
-                decoration: BoxDecoration(
-                    color: index % 2 == 0 ? Colors.orange : primaryColor,
-                    borderRadius: BorderRadius.circular(4.0.r)),
-                child: Center(
-                  child: Text("View",
-                      style: bodyTextStyle.copyWith(
-                        fontSize: 12.sp,
-                        color: Colors.white,
-                        fontFamily: roboto,
-                      )),
-                ),
-              )
-            ],
+      child: GestureDetector(
+        onTap: () {},
+        child: Container(
+          height: 41.h,
+          decoration: BoxDecoration(
+            color: Colors.white,
+          ),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 17.40),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text("Client sac",
+                    style: bodyTextStyle.copyWith(
+                      fontSize: 14.sp,
+                      color: Colors.black54,
+                      fontFamily: roboto,
+                    )),
+                Text("08/01/21",
+                    style: bodyTextStyle.copyWith(
+                      fontSize: 14.sp,
+                      color: Colors.black54,
+                      fontFamily: roboto,
+                    )),
+                Text("0346240",
+                    style: bodyTextStyle.copyWith(
+                      fontSize: 14.sp,
+                      fontFamily: roboto,
+                      color: Colors.black54,
+                    )),
+                GestureDetector(
+                  onTap: () {
+                    Get.to(() => ManageSurveyDetailScreen());
+                  },
+                  child: Container(
+                    height: 26.h,
+                    width: 64.w,
+                    decoration: BoxDecoration(
+                        color: index % 2 == 0 ? Colors.orange : primaryColor,
+                        borderRadius: BorderRadius.circular(4.0.r)),
+                    child: Center(
+                      child: Text("View",
+                          style: bodyTextStyle.copyWith(
+                            fontSize: 12.sp,
+                            color: Colors.white,
+                            fontFamily: roboto,
+                          )),
+                    ),
+                  ),
+                )
+              ],
+            ),
           ),
         ),
       ),

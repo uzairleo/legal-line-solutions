@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:legal_line_solution/core/constants/colors.dart';
 import 'package:legal_line_solution/core/constants/screen-util.dart';
 import 'package:legal_line_solution/core/constants/strings.dart';
 import 'package:legal_line_solution/core/constants/text_style.dart';
 import 'package:legal_line_solution/ui/custom_widgets/image-container.dart';
+import 'package:legal_line_solution/ui/screens/general_mailbox/general-mailbox-screen.dart';
+import 'package:legal_line_solution/ui/screens/login/login-screen.dart';
+import 'package:legal_line_solution/ui/screens/manage_client/manage-client-screen.dart';
+import 'package:legal_line_solution/ui/screens/manage_user/manage-user-list-screen.dart';
 
 class DrawerMenuTile {
   String? label;
@@ -128,7 +133,23 @@ class _DrawerScreenState extends State<DrawerScreen> {
                             } else {
                               tiles[i].isSelected = false;
                             }
-                            setState(() {});
+                          }
+                          setState(() {});
+                          switch (index) {
+                            case 0:
+                              Get.to(() => GeneralMailBoxScreen());
+                              break;
+                            case 1:
+                              Get.to(() => ManageClientScreen());
+                              break;
+                            case 2:
+                              Get.to(() => ManageUserListScreen());
+                              break;
+                            case 3:
+                              // Get.to(() => SettingsScreen());
+                              break;
+                            default:
+                              Get.to(() => GeneralMailBoxScreen());
                           }
                         },
                         child: Padding(
@@ -186,27 +207,55 @@ class _DrawerScreenState extends State<DrawerScreen> {
           SizedBox(
             height: 20.h,
           ),
-          Padding(
-            padding: EdgeInsets.only(top: 13, bottom: 13, left: 8.0),
-            child: Row(
-              children: [
-                ImageContainer(
-                  height: 19.h,
-                  width: 21.71.w,
-                  assetImage: "$assets/logout.png",
-                ),
-                SizedBox(
-                  width: 15.2.w,
-                ),
-                Text(
-                  "Logout",
-                  style: headingTextStyle.copyWith(
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.w500,
-                      fontFamily: roboto,
-                      color: Colors.white),
-                )
-              ],
+          GestureDetector(
+            onTap: () {
+              Get.defaultDialog(
+                title: 'Are you sure?',
+                content: new Text('Do you want to Logout'),
+                actions: <Widget>[
+                  new FlatButton(
+                    textColor: primaryColor,
+                    onPressed: () {
+                      Navigator.of(context).pop(false);
+                      // _updateConnectionFlag(true);
+                    },
+                    child: Text(
+                      "NO",
+                    ),
+                  ),
+                  SizedBox(height: 16),
+                  new FlatButton(
+                    textColor: primaryColor,
+                    onPressed: () {
+                      Get.offAll(() => LoginScreen());
+                    },
+                    child: Text("YES"),
+                  ),
+                ],
+              );
+            },
+            child: Padding(
+              padding: EdgeInsets.only(top: 13, bottom: 13, left: 8.0),
+              child: Row(
+                children: [
+                  ImageContainer(
+                    height: 19.h,
+                    width: 21.71.w,
+                    assetImage: "$assets/logout.png",
+                  ),
+                  SizedBox(
+                    width: 15.2.w,
+                  ),
+                  Text(
+                    "Logout",
+                    style: headingTextStyle.copyWith(
+                        fontSize: 16.sp,
+                        fontWeight: FontWeight.w500,
+                        fontFamily: roboto,
+                        color: Colors.white),
+                  )
+                ],
+              ),
             ),
           ),
           SizedBox(

@@ -274,6 +274,7 @@ class _AudioMessageLeftState extends State<AudioMessageLeft>
 
   @override
   void dispose() {
+    timer = Timer.periodic(Duration(), (timer) {});
     super.dispose();
     timer!.cancel();
   }
