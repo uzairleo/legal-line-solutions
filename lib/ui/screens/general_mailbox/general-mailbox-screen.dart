@@ -7,6 +7,7 @@ import 'package:legal_line_solution/core/constants/text_style.dart';
 import 'package:legal_line_solution/ui/base_screens/utility-base-screen.dart';
 import 'package:legal_line_solution/ui/custom_widgets/image-container.dart';
 import 'package:legal_line_solution/ui/screens/chat/chat-scree.dart';
+import 'package:legal_line_solution/ui/screens/general_mailbox/thread_detail/general-mailbox-detail-screen.dart';
 
 class GeneralMailBoxScreen extends StatelessWidget {
   @override
@@ -146,7 +147,7 @@ class GeneralMailBoxScreen extends StatelessWidget {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Get.to(() => ChatScreen());
+                      Get.to(() => GeneralMailBoxDetailScreen());
                     },
                     child: Container(
                       height: 26.h,
@@ -191,7 +192,7 @@ class GeneralMailBoxScreen extends StatelessWidget {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Get.to(() => ChatScreen());
+                      Get.to(() => GeneralMailBoxDetailScreen());
                     },
                     child: Container(
                       height: 26.h,
