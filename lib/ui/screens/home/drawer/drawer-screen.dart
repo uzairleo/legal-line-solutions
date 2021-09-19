@@ -9,6 +9,8 @@ import 'package:legal_line_solution/ui/screens/general_mailbox/general-mailbox-s
 import 'package:legal_line_solution/ui/screens/login/login-screen.dart';
 import 'package:legal_line_solution/ui/screens/manage_client/manage-client-screen.dart';
 import 'package:legal_line_solution/ui/screens/manage_user/manage-user-list-screen.dart';
+import 'package:legal_line_solution/ui/screens/privacy_policy/privacy-policy-screen.dart';
+import 'package:legal_line_solution/ui/screens/terms_services/terms-services-screen.dart';
 
 class DrawerMenuTile {
   String? label;
@@ -33,6 +35,7 @@ class DrawerScreen extends StatefulWidget {
 
 class _DrawerScreenState extends State<DrawerScreen> {
   List<DrawerMenuTile> tiles = [];
+  bool isSettingOpen = false;
   @override
   void initState() {
     super.initState();
@@ -71,116 +74,194 @@ class _DrawerScreenState extends State<DrawerScreen> {
       height: 1.sh,
       width: 1.sw / 1.5,
       color: primaryColor,
-      child: Column(
-        children: [
-          Padding(
-            padding: EdgeInsets.only(
-              top: 76.h,
-              left: 13,
-            ),
-            child: Row(
-              children: [
-                Container(
-                  height: 52.h,
-                  width: 52.w,
-                  decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      image: DecorationImage(
-                        image: AssetImage("$assets/user1.png"),
-                        fit: BoxFit.cover,
-                      )),
-                ),
-                SizedBox(
-                  width: 14.w,
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Juris Civilis",
-                      style: headingTextStyle.copyWith(
-                          fontSize: 20.sp,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white),
-                    ),
-                    Text("Lawyer",
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            Padding(
+              padding: EdgeInsets.only(
+                top: 76.h,
+                left: 13,
+              ),
+              child: Row(
+                children: [
+                  Container(
+                    height: 52.h,
+                    width: 52.w,
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        image: DecorationImage(
+                          image: AssetImage("$assets/user1.png"),
+                          fit: BoxFit.cover,
+                        )),
+                  ),
+                  SizedBox(
+                    width: 14.w,
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Juris Civilis",
                         style: headingTextStyle.copyWith(
-                            fontSize: 12.sp,
-                            fontWeight: FontWeight.w500,
-                            color: Colors.white)),
-                  ],
-                )
-              ],
+                            fontSize: 20.sp,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white),
+                      ),
+                      Text("Lawyer",
+                          style: headingTextStyle.copyWith(
+                              fontSize: 12.sp,
+                              fontWeight: FontWeight.w500,
+                              color: Colors.white)),
+                    ],
+                  )
+                ],
+              ),
             ),
-          ),
-          SizedBox(
-            height: 67.h,
-          ),
+            SizedBox(
+              height: 67.h,
+            ),
 
-          ///
-          ///list of settings tile
-          ///
-          Padding(
-            padding: const EdgeInsets.only(left: 0.0),
-            child: Column(
-              children: List.generate(
-                  tiles.length,
-                  (index) => InkWell(
-                        onTap: () {
-                          for (var i = 0; i < tiles.length; i++) {
-                            if (i == index) {
-                              tiles[i].isSelected = true;
-                            } else {
-                              tiles[i].isSelected = false;
+            ///
+            ///list of settings tile
+            ///
+            Padding(
+              padding: const EdgeInsets.only(left: 0.0),
+              child: Column(
+                children: List.generate(
+                    tiles.length,
+                    (index) => InkWell(
+                          onTap: () {
+                            for (var i = 0; i < tiles.length; i++) {
+                              if (i == index) {
+                                tiles[i].isSelected = true;
+                              } else {
+                                tiles[i].isSelected = false;
+                              }
                             }
-                          }
-                          setState(() {});
-                          switch (index) {
-                            case 0:
-                              Get.to(() => GeneralMailBoxScreen());
-                              break;
-                            case 1:
-                              Get.to(() => ManageClientScreen());
-                              break;
-                            case 2:
-                              Get.to(() => ManageUserListScreen());
-                              break;
-                            case 3:
-                              // Get.to(() => SettingsScreen());
-                              break;
-                            default:
-                              Get.to(() => GeneralMailBoxScreen());
-                          }
-                        },
-                        child: Padding(
-                          padding:
-                              const EdgeInsets.only(right: 38.0, bottom: 10),
+                            setState(() {});
+                            switch (index) {
+                              case 0:
+                                Get.to(() => GeneralMailBoxScreen());
+                                break;
+                              case 1:
+                                Get.to(() => ManageClientScreen());
+                                break;
+                              case 2:
+                                Get.to(() => ManageUserListScreen());
+                                break;
+                              case 3:
+                                // Get.to(() => SettingsScreen());
+                                isSettingOpen = !isSettingOpen;
+                                break;
+                              default:
+                                Get.to(() => GeneralMailBoxScreen());
+                            }
+                            setState(() {});
+                          },
+                          child: Padding(
+                            padding:
+                                const EdgeInsets.only(right: 38.0, bottom: 10),
+                            child: Container(
+                              height: 54.h,
+                              // width: 240.w,
+                              decoration: BoxDecoration(
+                                  color: tiles[index].isSelected
+                                      ? Color(0XFF24084B)
+                                      : Colors.transparent,
+                                  borderRadius: BorderRadius.circular(11.r)),
+                              child: Padding(
+                                padding: EdgeInsets.only(
+                                    top: 13, bottom: 13, left: 8.0),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    ImageContainer(
+                                      height: tiles[index].height!.h,
+                                      width: tiles[index].width!.w,
+                                      fit: BoxFit.contain,
+                                      assetImage: tiles[index].icon,
+                                    ),
+                                    SizedBox(
+                                      width: 15.2.w,
+                                    ),
+                                    Text(
+                                      "${tiles[index].label}",
+                                      style: headingTextStyle.copyWith(
+                                          fontSize: 16.sp,
+                                          fontWeight: FontWeight.w500,
+                                          fontFamily: roboto,
+                                          color: Colors.white),
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                        )),
+              ),
+            ),
+            isSettingOpen
+                ? AnimatedContainer(
+                    duration: Duration(milliseconds: 1000),
+                    child: Column(
+                      children: [
+                        ///first tile
+                        InkWell(
+                          onTap: () {
+                            print("Terms and services pressed");
+                            isSettingOpen = !isSettingOpen;
+                            setState(() {});
+                            Get.to(() => TermsOfServices());
+                          },
                           child: Container(
-                            height: 54.h,
-                            // width: 240.w,
-                            decoration: BoxDecoration(
-                                color: tiles[index].isSelected
-                                    ? Color(0XFF24084B)
-                                    : Colors.transparent,
-                                borderRadius: BorderRadius.circular(11.r)),
+                            color: Colors.transparent,
+                            padding: const EdgeInsets.only(
+                                left: 38.0, top: 10, bottom: 10),
+                            child: Row(
+                              children: [
+                                ImageContainer(
+                                    height: 20.h,
+                                    width: 16.w,
+                                    assetImage: "$assets/toc.png",
+                                    fit: BoxFit.contain),
+                                SizedBox(
+                                  width: 16.w,
+                                ),
+                                Text(
+                                  "Terms of Services",
+                                  style: headingTextStyle.copyWith(
+                                      fontSize: 16.sp,
+                                      fontWeight: FontWeight.w500,
+                                      fontFamily: roboto,
+                                      color: Colors.white),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                        //second tile
+                        GestureDetector(
+                          onTap: () {
+                            print("privacy and policy");
+                            isSettingOpen = !isSettingOpen;
+                            setState(() {});
+                            Get.to(() => PrivacyPolicyScreen());
+                          },
+                          child: Container(
+                            color: Colors.transparent,
                             child: Padding(
-                              padding: EdgeInsets.only(
-                                  top: 13, bottom: 13, left: 8.0),
+                              padding: const EdgeInsets.only(
+                                  left: 38.0, top: 10, bottom: 30),
                               child: Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
-                                  ImageContainer(
-                                    height: tiles[index].height!.h,
-                                    width: tiles[index].width!.w,
-                                    fit: BoxFit.contain,
-                                    assetImage: tiles[index].icon,
-                                  ),
+                                  Icon(Icons.privacy_tip_outlined,
+                                      color: Colors.white, size: 18),
                                   SizedBox(
-                                    width: 15.2.w,
+                                    width: 16.w,
                                   ),
                                   Text(
-                                    "${tiles[index].label}",
+                                    "Privacy and Policy",
                                     style: headingTextStyle.copyWith(
                                         fontSize: 16.sp,
                                         fontWeight: FontWeight.w500,
@@ -192,81 +273,83 @@ class _DrawerScreenState extends State<DrawerScreen> {
                             ),
                           ),
                         ),
-                      )),
-            ),
-          ),
-          Row(
-            children: [
-              Container(
-                height: 1.6.h,
-                width: 1.sw / 1.5,
-                color: Color(0XFF24084B),
-              ),
-            ],
-          ),
-          SizedBox(
-            height: 20.h,
-          ),
-          GestureDetector(
-            onTap: () {
-              Get.defaultDialog(
-                title: 'Are you sure?',
-                content: new Text('Do you want to Logout'),
-                actions: <Widget>[
-                  new FlatButton(
-                    textColor: primaryColor,
-                    onPressed: () {
-                      Navigator.of(context).pop(false);
-                      // _updateConnectionFlag(true);
-                    },
-                    child: Text(
-                      "NO",
+                      ],
                     ),
-                  ),
-                  SizedBox(height: 16),
-                  new FlatButton(
-                    textColor: primaryColor,
-                    onPressed: () {
-                      Get.offAll(() => LoginScreen());
-                    },
-                    child: Text("YES"),
-                  ),
-                ],
-              );
-            },
-            child: Padding(
-              padding: EdgeInsets.only(top: 13, bottom: 13, left: 8.0),
-              child: Row(
-                children: [
-                  ImageContainer(
-                    height: 19.h,
-                    width: 21.71.w,
-                    assetImage: "$assets/logout.png",
-                  ),
-                  SizedBox(
-                    width: 15.2.w,
-                  ),
-                  Text(
-                    "Logout",
-                    style: headingTextStyle.copyWith(
-                        fontSize: 16.sp,
-                        fontWeight: FontWeight.w500,
-                        fontFamily: roboto,
-                        color: Colors.white),
                   )
-                ],
+                : Container(),
+            Row(
+              children: [
+                Container(
+                  height: 1.6.h,
+                  width: 1.sw / 1.5,
+                  color: Color(0XFF24084B),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 20.h,
+            ),
+            GestureDetector(
+              onTap: () {
+                Get.defaultDialog(
+                  title: 'Are you sure?',
+                  content: new Text('Do you want to Logout'),
+                  actions: <Widget>[
+                    new FlatButton(
+                      textColor: primaryColor,
+                      onPressed: () {
+                        Navigator.of(context).pop(false);
+                        // _updateConnectionFlag(true);
+                      },
+                      child: Text(
+                        "NO",
+                      ),
+                    ),
+                    SizedBox(height: 16),
+                    new FlatButton(
+                      textColor: primaryColor,
+                      onPressed: () {
+                        Get.offAll(() => LoginScreen());
+                      },
+                      child: Text("YES"),
+                    ),
+                  ],
+                );
+              },
+              child: Padding(
+                padding: EdgeInsets.only(top: 13, bottom: 13, left: 8.0),
+                child: Row(
+                  children: [
+                    ImageContainer(
+                      height: 19.h,
+                      width: 21.71.w,
+                      assetImage: "$assets/logout.png",
+                    ),
+                    SizedBox(
+                      width: 15.2.w,
+                    ),
+                    Text(
+                      "Logout",
+                      style: headingTextStyle.copyWith(
+                          fontSize: 16.sp,
+                          fontWeight: FontWeight.w500,
+                          fontFamily: roboto,
+                          color: Colors.white),
+                    )
+                  ],
+                ),
               ),
             ),
-          ),
-          SizedBox(
-            height: 220.h,
-          ),
-          ImageContainer(
-            assetImage: "$assets/logo0.png",
-            height: 21.h,
-            width: 204.46.w,
-          )
-        ],
+            SizedBox(
+              height: 220.h,
+            ),
+            ImageContainer(
+              assetImage: "$assets/logo0.png",
+              height: 21.h,
+              width: 204.46.w,
+            )
+          ],
+        ),
       ),
     );
   }

@@ -4,7 +4,6 @@ import 'package:legal_line_solution/core/constants/colors.dart';
 import 'package:legal_line_solution/core/constants/screen-util.dart';
 import 'package:legal_line_solution/core/constants/strings.dart';
 import 'package:legal_line_solution/ui/custom_widgets/image-container.dart';
-import 'package:legal_line_solution/ui/screens/root-screen.dart';
 
 typedef OnBackPressed = void Function();
 
