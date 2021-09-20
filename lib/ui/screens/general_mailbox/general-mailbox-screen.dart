@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:legal_line_solution/core/constants/colors.dart';
 import 'package:legal_line_solution/core/constants/screen-util.dart';
 import 'package:legal_line_solution/core/constants/strings.dart';
 import 'package:legal_line_solution/core/constants/text_style.dart';
 import 'package:legal_line_solution/ui/base_screens/utility-base-screen.dart';
 import 'package:legal_line_solution/ui/custom_widgets/image-container.dart';
+import 'package:legal_line_solution/ui/screens/chat/chat-scree.dart';
+import 'package:legal_line_solution/ui/screens/general_mailbox/thread_detail/general-mailbox-detail-screen.dart';
 
 class GeneralMailBoxScreen extends StatelessWidget {
   @override
@@ -142,19 +145,24 @@ class GeneralMailBoxScreen extends StatelessWidget {
                     style: bodyTextStyle.copyWith(
                         color: Colors.black45, fontSize: 14.sp),
                   ),
-                  Container(
-                    height: 26.h,
-                    width: 106.w,
-                    decoration: BoxDecoration(
-                        color: Colors.orange,
-                        borderRadius: BorderRadius.circular(4.0.r)),
-                    child: Center(
-                      child: Text("Open Thread",
-                          style: bodyTextStyle.copyWith(
-                            fontSize: 12.sp,
-                            color: Colors.white,
-                            fontFamily: roboto,
-                          )),
+                  GestureDetector(
+                    onTap: () {
+                      Get.to(() => GeneralMailBoxDetailScreen());
+                    },
+                    child: Container(
+                      height: 26.h,
+                      width: 106.w,
+                      decoration: BoxDecoration(
+                          color: Colors.orange,
+                          borderRadius: BorderRadius.circular(4.0.r)),
+                      child: Center(
+                        child: Text("Open Thread",
+                            style: bodyTextStyle.copyWith(
+                              fontSize: 12.sp,
+                              color: Colors.white,
+                              fontFamily: roboto,
+                            )),
+                      ),
                     ),
                   )
                 ],
@@ -182,19 +190,24 @@ class GeneralMailBoxScreen extends StatelessWidget {
                     style: bodyTextStyle.copyWith(
                         color: Colors.black45, fontSize: 14.sp),
                   ),
-                  Container(
-                    height: 26.h,
-                    width: 106.w,
-                    decoration: BoxDecoration(
-                        color: primaryColor,
-                        borderRadius: BorderRadius.circular(4.0.r)),
-                    child: Center(
-                      child: Text("Open Thread",
-                          style: bodyTextStyle.copyWith(
-                            fontSize: 12.sp,
-                            color: Colors.white,
-                            fontFamily: roboto,
-                          )),
+                  GestureDetector(
+                    onTap: () {
+                      Get.to(() => GeneralMailBoxDetailScreen());
+                    },
+                    child: Container(
+                      height: 26.h,
+                      width: 106.w,
+                      decoration: BoxDecoration(
+                          color: primaryColor,
+                          borderRadius: BorderRadius.circular(4.0.r)),
+                      child: Center(
+                        child: Text("Open Thread",
+                            style: bodyTextStyle.copyWith(
+                              fontSize: 12.sp,
+                              color: Colors.white,
+                              fontFamily: roboto,
+                            )),
+                      ),
                     ),
                   )
                 ],

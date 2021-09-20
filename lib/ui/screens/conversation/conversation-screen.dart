@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:legal_line_solution/core/constants/colors.dart';
 import 'package:legal_line_solution/core/constants/screen-util.dart';
 import 'package:legal_line_solution/core/constants/strings.dart';
 import 'package:legal_line_solution/core/constants/text_style.dart';
 import 'package:legal_line_solution/ui/custom_widgets/conversation-tile.dart';
 import 'package:legal_line_solution/ui/custom_widgets/image-container.dart';
+import 'package:legal_line_solution/ui/screens/chat/chat-scree.dart';
 
 class ConversationScreen extends StatelessWidget {
   @override
@@ -118,7 +120,9 @@ class ConversationScreen extends StatelessWidget {
           ),
         ),
         IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Get.to(() => ChatScreen());
+          },
           icon: Container(
             height: 24.h,
             width: 24.w,

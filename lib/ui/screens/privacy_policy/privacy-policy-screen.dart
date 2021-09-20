@@ -14,12 +14,12 @@ import 'package:legal_line_solution/ui/screens/root-screen.dart';
 import 'package:legal_line_solution/ui/screens/staff_directory/staff-directory-screen.dart';
 import 'package:legal_line_solution/ui/screens/surveys/surveys-screen.dart';
 
-class TermsOfServices extends StatefulWidget {
+class PrivacyPolicyScreen extends StatefulWidget {
   @override
-  _TermsOfServicesState createState() => _TermsOfServicesState();
+  _PrivacyPolicyScreenState createState() => _PrivacyPolicyScreenState();
 }
 
-class _TermsOfServicesState extends State<TermsOfServices> {
+class _PrivacyPolicyScreenState extends State<PrivacyPolicyScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -79,7 +79,7 @@ class _TermsOfServicesState extends State<TermsOfServices> {
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Text(
-                            "Terms of Service",
+                            "Privacy Policy",
                             style: headingTextStyle.copyWith(
                                 fontSize: 30.sp,
                                 fontFamily: roboto,
@@ -110,7 +110,7 @@ class _TermsOfServicesState extends State<TermsOfServices> {
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Text(
-                            "Terms of Service",
+                            "Privacy Policy",
                             style: headingTextStyle.copyWith(
                                 fontSize: 30.sp,
                                 fontFamily: roboto,

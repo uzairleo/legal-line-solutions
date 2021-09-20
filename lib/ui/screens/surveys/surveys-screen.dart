@@ -1,17 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:legal_line_solution/core/constants/colors.dart';
 import 'package:legal_line_solution/core/constants/screen-util.dart';
 import 'package:legal_line_solution/core/constants/strings.dart';
 import 'package:legal_line_solution/core/constants/text_style.dart';
 import 'package:legal_line_solution/ui/base_screens/utility-base-screen.dart';
 import 'package:legal_line_solution/ui/custom_widgets/image-container.dart';
+import 'package:legal_line_solution/ui/screens/root-screen.dart';
+import 'package:legal_line_solution/ui/screens/surveys/create_survey/create-survey-screen.dart';
+import 'package:legal_line_solution/ui/screens/surveys/manage_survey/manage-survey-screen.dart';
 
 class SurveyScreen extends StatelessWidget {
+  final isBottomOne;
+  SurveyScreen({this.isBottomOne = false});
   @override
   Widget build(BuildContext context) {
     return UtilityBaseScreen(
       //bg of body
       bgAsset: "$assets/bg_pink2.png",
+      isBottomOne: isBottomOne,
+      // : null,
 
       ///
       ///appbar title
@@ -50,55 +58,60 @@ class SurveyScreen extends StatelessWidget {
 
   //create survey widget button
   createSurvey() {
-    return Container(
-      height: 88.h,
-      width: 280.w,
-      decoration: BoxDecoration(
-          color: primaryColor, borderRadius: BorderRadius.circular(6.0.r)),
-      child: Padding(
-        padding: const EdgeInsets.only(right: 0.0),
-        child: Row(
-          // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Container(
-              height: 88.h,
-              width: 66.w,
-              decoration: BoxDecoration(
-                  color: Color(0XFF2C609D),
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(6.r),
-                    bottomLeft: Radius.circular(6.r),
-                  )),
-              child: Center(
-                child: ImageContainer(
-                  assetImage: "$assets/add_doc.png",
-                  height: 33.89.h,
-                  width: 25.42.w,
+    return GestureDetector(
+      onTap: () {
+        Get.to(() => CreateSurveyScreen());
+      },
+      child: Container(
+        height: 88.h,
+        width: 280.w,
+        decoration: BoxDecoration(
+            color: primaryColor, borderRadius: BorderRadius.circular(6.0.r)),
+        child: Padding(
+          padding: const EdgeInsets.only(right: 0.0),
+          child: Row(
+            // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                height: 88.h,
+                width: 66.w,
+                decoration: BoxDecoration(
+                    color: Color(0XFF2C609D),
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(6.r),
+                      bottomLeft: Radius.circular(6.r),
+                    )),
+                child: Center(
+                  child: ImageContainer(
+                    assetImage: "$assets/add_doc.png",
+                    height: 33.89.h,
+                    width: 25.42.w,
+                  ),
                 ),
               ),
-            ),
-            SizedBox(
-              width: 28.w,
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text(
-                      "Create a survey",
-                      style: headingTextStyle.copyWith(
-                          color: Colors.white,
-                          fontSize: 22.sp,
-                          fontFamily: roboto),
-                    ),
-                  ],
-                )
-              ],
-            )
-          ],
+              SizedBox(
+                width: 28.w,
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Create a survey",
+                        style: headingTextStyle.copyWith(
+                            color: Colors.white,
+                            fontSize: 22.sp,
+                            fontFamily: roboto),
+                      ),
+                    ],
+                  )
+                ],
+              )
+            ],
+          ),
         ),
       ),
     );
@@ -106,63 +119,68 @@ class SurveyScreen extends StatelessWidget {
 
   //manage survey widget button
   manageSurvey() {
-    return Container(
-      height: 88.h,
-      width: 280.w,
-      decoration: BoxDecoration(
-          border: Border.all(color: Colors.black12, width: 2.4),
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(6.0.r)),
-      child: Padding(
-        padding: const EdgeInsets.only(right: 0.0),
-        child: Row(
-          // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Container(
-              height: 88.h,
-              width: 66.w,
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  // border: Border.all(color: Colors.black12, width: 2.4),
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(6.r),
-                    bottomLeft: Radius.circular(6.r),
-                  )),
-              child: Center(
-                child: ImageContainer(
-                  assetImage: "$assets/manage_survey.png",
-                  height: 33.89.h,
-                  width: 25.42.w,
+    return GestureDetector(
+      onTap: () {
+        Get.to(() => ManageSurveyScreen());
+      },
+      child: Container(
+        height: 88.h,
+        width: 280.w,
+        decoration: BoxDecoration(
+            border: Border.all(color: Colors.black12, width: 2.4),
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(6.0.r)),
+        child: Padding(
+          padding: const EdgeInsets.only(right: 0.0),
+          child: Row(
+            // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                height: 88.h,
+                width: 66.w,
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    // border: Border.all(color: Colors.black12, width: 2.4),
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(6.r),
+                      bottomLeft: Radius.circular(6.r),
+                    )),
+                child: Center(
+                  child: ImageContainer(
+                    assetImage: "$assets/manage_survey.png",
+                    height: 33.89.h,
+                    width: 25.42.w,
+                  ),
                 ),
               ),
-            ),
-            Container(
-              height: 88.h,
-              width: 2.4,
-              color: Colors.black12,
-            ),
-            SizedBox(
-              width: 28.w,
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text(
-                      "Manage survey",
-                      style: headingTextStyle.copyWith(
-                          color: Color(0XFF6200EE),
-                          fontSize: 22.sp,
-                          fontFamily: roboto),
-                    ),
-                  ],
-                )
-              ],
-            )
-          ],
+              Container(
+                height: 88.h,
+                width: 2.4,
+                color: Colors.black12,
+              ),
+              SizedBox(
+                width: 28.w,
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Manage survey",
+                        style: headingTextStyle.copyWith(
+                            color: Color(0XFF6200EE),
+                            fontSize: 22.sp,
+                            fontFamily: roboto),
+                      ),
+                    ],
+                  )
+                ],
+              )
+            ],
+          ),
         ),
       ),
     );

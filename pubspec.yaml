@@ -54,6 +54,7 @@ flutter:
   assets:
     - assets/
     - assets/static_assets/
+    - assets/static_assets/bottom-nav-bar/
   # example:
   # fonts:
   #   - family: Source Sans Pro

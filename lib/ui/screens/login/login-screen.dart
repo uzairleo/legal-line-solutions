@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:legal_line_solution/core/constants/screen-util.dart';
 import 'package:legal_line_solution/core/constants/strings.dart';
 import 'package:legal_line_solution/core/constants/text_style.dart';
 import 'package:legal_line_solution/ui/custom_widgets/image-container.dart';
 import 'package:legal_line_solution/ui/custom_widgets/rounded-raised-button.dart';
+import 'package:legal_line_solution/ui/screens/forgot_password/forgot-password-screen.dart';
+import 'package:legal_line_solution/ui/screens/root-screen.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -112,9 +115,14 @@ class LoginScreen extends StatelessWidget {
           SizedBox(
             height: 9.5.h,
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [Text("Forget Password?")],
+          GestureDetector(
+            onTap: () {
+              Get.to(() => ForgotPassword());
+            },
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [Text("Forget Password?")],
+            ),
           ),
           // SizedBox(
           //   height: 22.h,
@@ -136,7 +144,9 @@ class LoginScreen extends StatelessWidget {
           width: 200.w,
           child: RoundedRaisedButton(
             buttonText: "LOGIN",
-            onPressed: () {},
+            onPressed: () {
+              Get.offAll(() => RootScreen());
+            },
           ),
         ),
       ],

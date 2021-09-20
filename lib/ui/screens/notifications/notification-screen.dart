@@ -8,11 +8,14 @@ import 'package:legal_line_solution/ui/custom_widgets/image-container.dart';
 import 'package:legal_line_solution/ui/custom_widgets/notification-tile.dart';
 
 class NotificationScreen extends StatelessWidget {
+  final isBottomOne;
+  NotificationScreen({this.isBottomOne});
   @override
   Widget build(BuildContext context) {
     return UtilityBaseScreen(
       //bg of body
       bgAsset: "$assets/bg_pink2.png",
+      isBottomOne: isBottomOne,
 
       ///
       ///appbar title

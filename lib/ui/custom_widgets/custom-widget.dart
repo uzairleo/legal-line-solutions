@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:legal_line_solution/core/constants/colors.dart';
 import 'package:legal_line_solution/core/constants/screen-util.dart';
 import 'package:legal_line_solution/core/constants/strings.dart';
 import 'package:legal_line_solution/core/constants/text_style.dart';
+import 'package:legal_line_solution/ui/screens/manage_user/edit-manager-user-screen.dart';
 
 import 'image-container.dart';
 
@@ -142,17 +144,22 @@ class ManageUserTile extends StatelessWidget {
                       SizedBox(
                         height: 17.h,
                       ),
-                      Container(
-                        height: 26.h,
-                        width: 58.w,
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(4.r),
-                            border: Border.all(color: Colors.orange)),
-                        child: Center(
-                          child: Text(
-                            "Edit",
-                            style: bodyTextStyle.copyWith(fontSize: 14.sp),
+                      GestureDetector(
+                        onTap: () {
+                          Get.to(() => EditManageUserScreen());
+                        },
+                        child: Container(
+                          height: 26.h,
+                          width: 58.w,
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(4.r),
+                              border: Border.all(color: Colors.orange)),
+                          child: Center(
+                            child: Text(
+                              "Edit",
+                              style: bodyTextStyle.copyWith(fontSize: 14.sp),
+                            ),
                           ),
                         ),
                       ),

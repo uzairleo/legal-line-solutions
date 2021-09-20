@@ -9,11 +9,14 @@ import 'package:legal_line_solution/ui/custom_widgets/notification-tile.dart';
 import 'package:legal_line_solution/ui/custom_widgets/rectangle-button.dart';
 
 class ProfileScreen extends StatelessWidget {
+  final isBottomOne;
+  ProfileScreen({this.isBottomOne});
   @override
   Widget build(BuildContext context) {
     return UtilityBaseScreen(
       //bg of body
       bgAsset: "$assets/bg_blur.png",
+      isBottomOne: isBottomOne,
 
       ///
       ///appbar title
