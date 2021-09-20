@@ -9,6 +9,7 @@ import 'package:legal_line_solution/ui/custom_widgets/bottom_sheets/question-bot
 import 'package:legal_line_solution/ui/custom_widgets/custom-widget.dart';
 import 'package:legal_line_solution/ui/custom_widgets/image-container.dart';
 import 'package:legal_line_solution/ui/custom_widgets/rectangle-button.dart';
+import 'package:legal_line_solution/ui/screens/manage_user/create_user/create-user-screen.dart';
 
 class ManageUserListScreen extends StatelessWidget {
   @override
@@ -104,7 +105,7 @@ class ManageUserListScreen extends StatelessWidget {
                     ]),
                 child: TextFormField(
                   onSaved: (value) {},
-                  enabled: false,
+                  enabled: true,
                   style: subBodyTextStyle.copyWith(fontSize: 16),
                   cursorColor: Colors.black,
                   controller: TextEditingController(),
@@ -185,16 +186,7 @@ class CreateQuestion extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        showModalBottomSheet(
-            isScrollControlled: true,
-            backgroundColor: Colors.transparent,
-            context: context,
-            builder: (context) => CreateQuestionBottomSheet());
-        // Scaffold.of(context).showBottomSheet<void>(
-        //   (BuildContext context) {
-        //     return CreateQuestionBottomSheet();
-        //   },
-        // );
+        Get.to(() => CreateUserScreen());
       },
       child: Padding(
         padding: const EdgeInsets.only(top: 30, left: 32, bottom: 32.0),
