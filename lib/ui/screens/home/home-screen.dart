@@ -210,7 +210,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               height: 10.h,
                               width: 10.w,
                               decoration: BoxDecoration(
-                                  color: primaryColor, shape: BoxShape.circle),
+                                  color: Colors.white, shape: BoxShape.circle),
                             )
                           ]),
                     ),
@@ -270,7 +270,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               height: 10.h,
                               width: 10.w,
                               decoration: BoxDecoration(
-                                  color: primaryColor, shape: BoxShape.circle),
+                                  color: Colors.orange, shape: BoxShape.circle),
                             )
                           ]),
                     ),

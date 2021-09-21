@@ -8,6 +8,8 @@ import 'package:legal_line_solution/ui/base_screens/utility-base-screen.dart';
 import 'package:legal_line_solution/ui/custom_widgets/bottom_sheets/question-bottom-sheet.dart';
 import 'package:legal_line_solution/ui/custom_widgets/image-container.dart';
 import 'package:legal_line_solution/ui/custom_widgets/rectangle-button.dart';
+import 'package:legal_line_solution/ui/screens/manage_client/create_client/create-client-screen.dart';
+import 'package:legal_line_solution/ui/screens/manage_client/manage-client-detail-screen.dart';
 
 class ManageClientScreen extends StatelessWidget {
   @override
@@ -167,19 +169,24 @@ class ManageClientScreen extends StatelessWidget {
                     style: bodyTextStyle.copyWith(
                         color: Colors.black45, fontSize: 14.sp),
                   ),
-                  Container(
-                    height: 26.h,
-                    width: 64.w,
-                    decoration: BoxDecoration(
-                        color: Colors.orange,
-                        borderRadius: BorderRadius.circular(4.0.r)),
-                    child: Center(
-                      child: Text("VIEW",
-                          style: bodyTextStyle.copyWith(
-                            fontSize: 12.sp,
-                            color: Colors.white,
-                            fontFamily: roboto,
-                          )),
+                  GestureDetector(
+                    onTap: () {
+                      Get.to(() => ManageClientDetailScreen());
+                    },
+                    child: Container(
+                      height: 26.h,
+                      width: 64.w,
+                      decoration: BoxDecoration(
+                          color: Colors.orange,
+                          borderRadius: BorderRadius.circular(4.0.r)),
+                      child: Center(
+                        child: Text("VIEW",
+                            style: bodyTextStyle.copyWith(
+                              fontSize: 12.sp,
+                              color: Colors.white,
+                              fontFamily: roboto,
+                            )),
+                      ),
                     ),
                   )
                 ],
@@ -212,19 +219,24 @@ class ManageClientScreen extends StatelessWidget {
                     style: bodyTextStyle.copyWith(
                         color: Colors.black45, fontSize: 14.sp),
                   ),
-                  Container(
-                    height: 26.h,
-                    width: 64.w,
-                    decoration: BoxDecoration(
-                        color: primaryColor,
-                        borderRadius: BorderRadius.circular(4.0.r)),
-                    child: Center(
-                      child: Text("VIEW",
-                          style: bodyTextStyle.copyWith(
-                            fontSize: 12.sp,
-                            color: Colors.white,
-                            fontFamily: roboto,
-                          )),
+                  GestureDetector(
+                    onTap: () {
+                      Get.to(() => ManageClientDetailScreen());
+                    },
+                    child: Container(
+                      height: 26.h,
+                      width: 64.w,
+                      decoration: BoxDecoration(
+                          color: primaryColor,
+                          borderRadius: BorderRadius.circular(4.0.r)),
+                      child: Center(
+                        child: Text("VIEW",
+                            style: bodyTextStyle.copyWith(
+                              fontSize: 12.sp,
+                              color: Colors.white,
+                              fontFamily: roboto,
+                            )),
+                      ),
                     ),
                   )
                 ],
@@ -257,19 +269,24 @@ class ManageClientScreen extends StatelessWidget {
                     style: bodyTextStyle.copyWith(
                         color: Colors.black45, fontSize: 14.sp),
                   ),
-                  Container(
-                    height: 26.h,
-                    width: 64.w,
-                    decoration: BoxDecoration(
-                        color: Colors.orange,
-                        borderRadius: BorderRadius.circular(4.0.r)),
-                    child: Center(
-                      child: Text("VIEW",
-                          style: bodyTextStyle.copyWith(
-                            fontSize: 12.sp,
-                            color: Colors.white,
-                            fontFamily: roboto,
-                          )),
+                  GestureDetector(
+                    onTap: () {
+                      Get.to(() => ManageClientDetailScreen());
+                    },
+                    child: Container(
+                      height: 26.h,
+                      width: 64.w,
+                      decoration: BoxDecoration(
+                          color: Colors.orange,
+                          borderRadius: BorderRadius.circular(4.0.r)),
+                      child: Center(
+                        child: Text("VIEW",
+                            style: bodyTextStyle.copyWith(
+                              fontSize: 12.sp,
+                              color: Colors.white,
+                              fontFamily: roboto,
+                            )),
+                      ),
                     ),
                   )
                 ],
@@ -302,19 +319,24 @@ class ManageClientScreen extends StatelessWidget {
                     style: bodyTextStyle.copyWith(
                         color: Colors.black45, fontSize: 14.sp),
                   ),
-                  Container(
-                    height: 26.h,
-                    width: 64.w,
-                    decoration: BoxDecoration(
-                        color: primaryColor,
-                        borderRadius: BorderRadius.circular(4.0.r)),
-                    child: Center(
-                      child: Text("VIEW",
-                          style: bodyTextStyle.copyWith(
-                            fontSize: 12.sp,
-                            color: Colors.white,
-                            fontFamily: roboto,
-                          )),
+                  GestureDetector(
+                    onTap: () {
+                      Get.to(() => ManageClientDetailScreen());
+                    },
+                    child: Container(
+                      height: 26.h,
+                      width: 64.w,
+                      decoration: BoxDecoration(
+                          color: primaryColor,
+                          borderRadius: BorderRadius.circular(4.0.r)),
+                      child: Center(
+                        child: Text("VIEW",
+                            style: bodyTextStyle.copyWith(
+                              fontSize: 12.sp,
+                              color: Colors.white,
+                              fontFamily: roboto,
+                            )),
+                      ),
                     ),
                   )
                 ],
@@ -339,16 +361,7 @@ class CreateQuestion extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        showModalBottomSheet(
-            isScrollControlled: true,
-            backgroundColor: Colors.transparent,
-            context: context,
-            builder: (context) => CreateQuestionBottomSheet());
-        // Scaffold.of(context).showBottomSheet<void>(
-        //   (BuildContext context) {
-        //     return CreateQuestionBottomSheet();
-        //   },
-        // );
+        Get.to(() => CreateClientScreen());
       },
       child: Padding(
         padding: const EdgeInsets.only(top: 30, left: 32, bottom: 32.0),
