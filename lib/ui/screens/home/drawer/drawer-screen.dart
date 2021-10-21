@@ -61,6 +61,20 @@ class _DrawerScreenState extends State<DrawerScreen> {
       height: 20.83,
       width: 24.3,
     ));
+
+    tiles.add(DrawerMenuTile(
+      label: 'Firm A',
+      icon: "$assets/manage_user.png",
+      height: 20.83,
+      width: 24.3,
+    ));
+
+    tiles.add(DrawerMenuTile(
+      label: 'Add Firm',
+      icon: "$assets/add_button.png",
+      height: 20.83,
+      width: 24.3,
+    ));
     tiles.add(DrawerMenuTile(
         label: 'Settings',
         icon: "$assets/settings.png",
@@ -149,12 +163,12 @@ class _DrawerScreenState extends State<DrawerScreen> {
                               case 2:
                                 Get.to(() => ManageUserListScreen());
                                 break;
-                              case 3:
+                              case 5:
                                 // Get.to(() => SettingsScreen());
                                 isSettingOpen = !isSettingOpen;
                                 break;
                               default:
-                                Get.to(() => GeneralMailBoxScreen());
+                              // Get.to(() => GeneralMailBoxScreen());
                             }
                             setState(() {});
                           },
