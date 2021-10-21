@@ -83,7 +83,7 @@ class ConversationScreen extends StatelessWidget {
                     ]),
                 child: TextFormField(
                   onSaved: (value) {},
-                  enabled: false,
+                  enabled: true,
                   style: subBodyTextStyle.copyWith(fontSize: 16),
                   cursorColor: Colors.black,
                   controller: TextEditingController(),
