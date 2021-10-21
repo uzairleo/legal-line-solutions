@@ -164,11 +164,10 @@ class _DrawerScreenState extends State<DrawerScreen> {
                                 Get.to(() => ManageUserListScreen());
                                 break;
                               case 5:
-                                // Get.to(() => SettingsScreen());
                                 isSettingOpen = !isSettingOpen;
                                 break;
+
                               default:
-                              // Get.to(() => GeneralMailBoxScreen());
                             }
                             setState(() {});
                           },
