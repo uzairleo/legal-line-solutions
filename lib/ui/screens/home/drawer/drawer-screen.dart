@@ -163,6 +163,9 @@ class _DrawerScreenState extends State<DrawerScreen> {
                               case 2:
                                 Get.to(() => ManageUserListScreen());
                                 break;
+                              case 4:
+                                Get.to(() => LoginScreen());
+                                break;
                               case 5:
                                 isSettingOpen = !isSettingOpen;
                                 break;

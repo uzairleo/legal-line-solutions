@@ -8,6 +8,7 @@ import 'package:legal_line_solution/ui/base_screens/utility-base-screen.dart';
 import 'package:legal_line_solution/ui/custom_widgets/bottom_sheets/question-bottom-sheet.dart';
 import 'package:legal_line_solution/ui/custom_widgets/image-container.dart';
 import 'package:legal_line_solution/ui/custom_widgets/rectangle-button.dart';
+import 'package:legal_line_solution/ui/screens/chat/chat-scree.dart';
 
 class ManageClientDetailScreen extends StatelessWidget {
   @override
@@ -53,6 +54,34 @@ class ManageClientDetailScreen extends StatelessWidget {
           ///other content
           ///
           body(),
+
+          Padding(
+            padding: const EdgeInsets.only(top: 128.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  height: 60.h,
+                  width: 134.w,
+                  child: RectangularButton(
+                    title: "Message",
+                    buttonColor: orangeColor,
+                    onTap: () {
+                      Get.to(() => ChatScreen());
+                    },
+                    width: 100.w,
+                    radius: 6.0,
+                    textStyle: bodyTextStyle.copyWith(
+                        letterSpacing: 1,
+                        fontFamily: roboto,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20.sp,
+                        color: Colors.white),
+                  ),
+                ),
+              ],
+            ),
+          )
         ],
       ),
     );

@@ -71,6 +71,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   height: 54.h,
                 ),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Text(
                       "Juris Civilis",

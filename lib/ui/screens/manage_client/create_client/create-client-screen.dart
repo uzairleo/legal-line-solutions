@@ -99,7 +99,7 @@ class _CreateClientScreenState extends State<CreateClientScreen> {
     return Opacity(
       opacity: 0.8,
       child: Container(
-        height: 388.h,
+        // height: 430.h,
         decoration: BoxDecoration(color: Colors.white, boxShadow: [
           BoxShadow(
             color: Colors.grey.withOpacity(0.3),
@@ -114,53 +114,65 @@ class _CreateClientScreenState extends State<CreateClientScreen> {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 22, vertical: 47.0),
           child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                Row(
+              Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    // SizedBox(
-                    //   width: 10.w,
-                    // ),
-                    Text(
-                      "Create Info ",
-                      style: bodyTextStyle.copyWith(
-                          fontFamily: roboto,
-                          fontSize: 14.sp,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        // SizedBox(
+                        //   width: 10.w,
+                        // ),
+                        Text(
+                          "Create Info ",
+                          style: bodyTextStyle.copyWith(
+                              fontFamily: roboto,
+                              fontSize: 14.sp,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black),
+                        ),
+                      ],
                     ),
-                  ],
-                ),
-                SizedBox(
-                  height: 34.h,
-                ),
-                textField(
-                  label: "Client Name",
-                  hint: "enter your name",
-                ),
-                SizedBox(
-                  height: 20.h,
-                ),
-                textField(
-                  label: "Inmate ID",
-                  hint: "enter your last name",
-                ),
-                SizedBox(
-                  height: 20.h,
-                ),
-                textField(
-                  label: "Create Access Pin",
-                  hint: "******",
-                ),
-                SizedBox(
-                  height: 20.h,
-                ),
-                textField(
-                  label: "Facility Name",
-                  hint: "Enter your facility name",
-                ),
-              ]),
+                    SizedBox(
+                      height: 34.h,
+                    ),
+                    textField(
+                      label: "First Name",
+                      hint: "enter Client first name",
+                    ),
+                    SizedBox(
+                      height: 20.h,
+                    ),
+                    textField(
+                      label: "Last Name",
+                      hint: "enter Client last Name",
+                    ),
+                    SizedBox(
+                      height: 20.h,
+                    ),
+                    textField(
+                      label: "Inmate ID",
+                      hint: "enter your last name",
+                    ),
+                    SizedBox(
+                      height: 20.h,
+                    ),
+                    textField(
+                      label: "Create Access Pin",
+                      hint: "******",
+                    ),
+                    SizedBox(
+                      height: 20.h,
+                    ),
+                    textField(
+                      label: "Facility Name",
+                      hint: "Enter your facility name",
+                    ),
+                  ]),
               SizedBox(
                 width: 22.w,
               ),
