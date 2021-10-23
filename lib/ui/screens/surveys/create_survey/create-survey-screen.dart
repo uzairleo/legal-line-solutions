@@ -10,7 +10,15 @@ import 'package:legal_line_solution/ui/custom_widgets/image-container.dart';
 import 'package:legal_line_solution/ui/custom_widgets/notification-tile.dart';
 import 'package:legal_line_solution/ui/custom_widgets/rectangle-button.dart';
 
-class CreateSurveyScreen extends StatelessWidget {
+class CreateSurveyScreen extends StatefulWidget {
+  @override
+  _CreateSurveyScreenState createState() => _CreateSurveyScreenState();
+}
+
+class _CreateSurveyScreenState extends State<CreateSurveyScreen> {
+  bool isChecked = false;
+  bool isChecked2 = false;
+  bool checkAll = false;
   @override
   Widget build(BuildContext context) {
     return UtilityBaseScreen(
@@ -96,12 +104,23 @@ class CreateSurveyScreen extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
-                  "Create the Title",
-                  style: headingTextStyle.copyWith(
-                      fontFamily: roboto,
-                      fontSize: 20.sp,
-                      fontWeight: FontWeight.bold),
+                // Text(
+                //   "Create the Title",
+                //   style: headingTextStyle.copyWith(
+                //       fontFamily: roboto,
+                //       fontSize: 20.sp,
+                //       fontWeight: FontWeight.bold),
+                // ),
+                Flexible(
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                      hintText: "Create the title",
+                      hintStyle: headingTextStyle.copyWith(
+                          fontFamily: roboto,
+                          fontSize: 20.sp,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ),
                 ),
                 ImageContainer(
                   height: 21.h,
@@ -225,31 +244,42 @@ class CreateSurveyScreen extends StatelessWidget {
                 )
               ], color: Colors.black12),
             ),
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 8.h, horizontal: 17.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    "Sam brain",
-                    style: bodyTextStyle.copyWith(
-                      fontSize: 14.sp,
-                      color: Colors.black45,
+            InkWell(
+              onTap: () {
+                isChecked = !isChecked;
+                setState(() {});
+              },
+              child: Container(
+                padding: EdgeInsets.symmetric(vertical: 8.h, horizontal: 17.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Sam brain",
+                      style: bodyTextStyle.copyWith(
+                        fontSize: 14.sp,
+                        color: Colors.black45,
+                      ),
                     ),
-                  ),
-                  Text(
-                    "Alley",
-                    style: bodyTextStyle.copyWith(
-                        color: Colors.black45, fontSize: 14.sp),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(right: 20.0),
-                    child: Icon(
-                      Icons.check,
-                      color: Color(0XFF6200EE),
+                    Text(
+                      "Alley",
+                      style: bodyTextStyle.copyWith(
+                          color: Colors.black45, fontSize: 14.sp),
                     ),
-                  )
-                ],
+                    isChecked
+                        ? Padding(
+                            padding: const EdgeInsets.only(right: 20.0),
+                            child: Icon(
+                              Icons.check,
+                              color: Color(0XFF6200EE),
+                            ),
+                          )
+                        : Padding(
+                            padding: const EdgeInsets.only(right: 20.0),
+                            child: Icon(Icons.check, color: Colors.white),
+                          )
+                  ],
+                ),
               ),
             ),
             Container(
@@ -257,31 +287,43 @@ class CreateSurveyScreen extends StatelessWidget {
               height: 0.8,
               decoration: BoxDecoration(color: Colors.black12),
             ),
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 8.h, horizontal: 17.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    "Sam brain",
-                    style: bodyTextStyle.copyWith(
-                      fontSize: 14.sp,
-                      color: Colors.black45,
+            InkWell(
+              onTap: () {
+                setState(() {
+                  isChecked2 = !isChecked;
+                });
+              },
+              child: Container(
+                padding: EdgeInsets.symmetric(vertical: 8.h, horizontal: 17.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "leo brain ",
+                      style: bodyTextStyle.copyWith(
+                        fontSize: 14.sp,
+                        color: Colors.black45,
+                      ),
                     ),
-                  ),
-                  Text(
-                    "Alley",
-                    style: bodyTextStyle.copyWith(
-                        color: Colors.black45, fontSize: 14.sp),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(right: 20.0),
-                    child: Icon(
-                      Icons.check,
-                      color: Colors.white,
+                    Text(
+                      "Alley",
+                      style: bodyTextStyle.copyWith(
+                          color: Colors.black45, fontSize: 14.sp),
                     ),
-                  )
-                ],
+                    isChecked2
+                        ? Padding(
+                            padding: const EdgeInsets.only(right: 20.0),
+                            child: Icon(
+                              Icons.check,
+                              color: Color(0XFF6200EE),
+                            ),
+                          )
+                        : Padding(
+                            padding: const EdgeInsets.only(right: 20.0),
+                            child: Icon(Icons.check, color: Colors.white),
+                          )
+                  ],
+                ),
               ),
             ),
             Container(
@@ -307,10 +349,18 @@ class CreateSurveyScreen extends StatelessWidget {
                           color: Colors.black45, fontSize: 14.sp),
                     ),
                   ),
-                  ImageContainer(
-                    assetImage: "$assets/radio_sel.png",
-                    height: 24.h,
-                    width: 24.w,
+                  InkWell(
+                    onTap: () {
+                      checkAll = !checkAll;
+                      setState(() {});
+                    },
+                    child: ImageContainer(
+                      assetImage: !checkAll
+                          ? "$assets/radio_sel.png"
+                          : "$assets/radio_unsel.png",
+                      height: 24.h,
+                      width: 24.w,
+                    ),
                   ),
                   Padding(
                     padding: EdgeInsets.only(left: 55.w, right: 8.0.w),
@@ -320,10 +370,18 @@ class CreateSurveyScreen extends StatelessWidget {
                           color: Colors.black45, fontSize: 14.sp),
                     ),
                   ),
-                  ImageContainer(
-                    assetImage: "$assets/radio_unsel.png",
-                    height: 24.h,
-                    width: 24.w,
+                  InkWell(
+                    onTap: () {
+                      checkAll = !checkAll;
+                      setState(() {});
+                    },
+                    child: ImageContainer(
+                      assetImage: checkAll
+                          ? "$assets/radio_sel.png"
+                          : "$assets/radio_unsel.png",
+                      height: 24.h,
+                      width: 24.w,
+                    ),
                   )
                 ],
               ),

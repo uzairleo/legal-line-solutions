@@ -17,7 +17,7 @@ class CreateUserScreen extends StatefulWidget {
 }
 
 class _CreateUserScreenState extends State<CreateUserScreen> {
-  String? dropdownValue = "Role 1";
+  String? dropdownValue = "LLS Super Admin";
   bool flag1 = false;
 
   bool flag2 = false;
@@ -393,8 +393,12 @@ class _CreateUserScreenState extends State<CreateUserScreen> {
                 dropdownValue = newValue;
               });
             },
-            items: <String>['Role 1', 'Role 2']
-                .map<DropdownMenuItem<String>>((String value) {
+            items: <String>[
+              'LLS Super Admin',
+              'LLS Admin',
+              'Firm Admin',
+              'Attorney'
+            ].map<DropdownMenuItem<String>>((String value) {
               return DropdownMenuItem<String>(
                 value: value,
                 child: Text(

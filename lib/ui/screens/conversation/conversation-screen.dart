@@ -54,89 +54,120 @@ class ConversationScreen extends StatelessWidget {
   ///search bar
   ///
   search() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    return Column(
       children: [
-        Expanded(
-          child: Padding(
-            padding: const EdgeInsets.only(right: 26.3),
-            child: GestureDetector(
-              onTap: () {
-                // Get.to(() => SearchProductScreen());
-              },
-              child: Container(
-                height: 40.h,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8.0),
-                    color: Colors.white,
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.4),
-                        blurRadius: 8, // has the effect of softening the shadow
-                        spreadRadius:
-                            1.2, // has the effect of extending the shadow
-                        offset: Offset(
-                          0, // horizontal, move right 10
-                          0.4, // vertical, move down 10
-                        ),
-                      )
-                    ]),
-                child: TextFormField(
-                  onSaved: (value) {},
-                  enabled: true,
-                  style: subBodyTextStyle.copyWith(fontSize: 16),
-                  cursorColor: Colors.black,
-                  controller: TextEditingController(),
-                  validator: (value) {
-                    if (value != null) {
-                      return "please write something";
-                    } else {
-                      return null;
-                    }
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.only(right: 26.3),
+                child: GestureDetector(
+                  onTap: () {
+                    // Get.to(() => SearchProductScreen());
                   },
-                  decoration: InputDecoration(
-                      suffixIconConstraints:
-                          BoxConstraints(maxHeight: 40, maxWidth: 50),
-                      suffixIcon: Padding(
-                        padding:
-                            const EdgeInsets.only(left: 14.6, right: 14.12),
-                        child: ImageContainer(
-                          assetImage: "$assets/search.png",
-                          height: 15.91.h,
-                          width: 14.9.w,
-                        ),
-                      ),
-                      border: InputBorder.none,
-                      contentPadding: EdgeInsets.only(
-                        left: 22,
-                        bottom: 15,
-                      ),
-                      hintText: "Search people",
-                      hintStyle: subBodyTextStyle.copyWith(
-                          color: Color(0XFFC5C5C5), fontSize: 17.sp)),
+                  child: Container(
+                    height: 40.h,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(8.0),
+                        color: Colors.white,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.4),
+                            blurRadius:
+                                8, // has the effect of softening the shadow
+                            spreadRadius:
+                                1.2, // has the effect of extending the shadow
+                            offset: Offset(
+                              0, // horizontal, move right 10
+                              0.4, // vertical, move down 10
+                            ),
+                          )
+                        ]),
+                    child: TextFormField(
+                      onSaved: (value) {},
+                      enabled: true,
+                      style: subBodyTextStyle.copyWith(fontSize: 16),
+                      cursorColor: Colors.black,
+                      controller: TextEditingController(),
+                      validator: (value) {
+                        if (value != null) {
+                          return "please write something";
+                        } else {
+                          return null;
+                        }
+                      },
+                      decoration: InputDecoration(
+                          suffixIconConstraints:
+                              BoxConstraints(maxHeight: 40, maxWidth: 50),
+                          suffixIcon: Padding(
+                            padding:
+                                const EdgeInsets.only(left: 14.6, right: 14.12),
+                            child: ImageContainer(
+                              assetImage: "$assets/search.png",
+                              height: 15.91.h,
+                              width: 14.9.w,
+                            ),
+                          ),
+                          border: InputBorder.none,
+                          contentPadding: EdgeInsets.only(
+                            left: 22,
+                            bottom: 15,
+                          ),
+                          hintText: "Search people",
+                          hintStyle: subBodyTextStyle.copyWith(
+                              color: Color(0XFFC5C5C5), fontSize: 17.sp)),
+                    ),
+                  ),
                 ),
               ),
             ),
-          ),
-        ),
-        IconButton(
-          onPressed: () {
-            Get.to(() => ChatScreen());
-          },
-          icon: Container(
-            height: 24.h,
-            width: 24.w,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(5.0.r),
-              color: primaryColor.withOpacity(0.4),
+            Column(
+              children: [
+                // IconButton(
+                //   onPressed: () {
+                //     // Get.to(() => ChatScreen());
+                //   },
+                // icon: Container(
+                //   height: 24.h,
+                //   width: 24.w,
+                //   decoration: BoxDecoration(
+                //     borderRadius: BorderRadius.circular(5.0.r),
+                //     color: primaryColor.withOpacity(0.4),
+                //   ),
+                //   child: Center(
+                //     child: Icon(
+                //       Icons.add,
+                //       size: 14,
+                //     ),
+                //   ),
+                //   ),
+                // ),
+
+                PopupMenuButton(
+                    icon: Container(
+                      height: 24.h,
+                      width: 24.w,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5.0.r),
+                        color: primaryColor.withOpacity(0.4),
+                      ),
+                      child: Center(
+                        child: Icon(
+                          Icons.add,
+                          size: 14,
+                        ),
+                      ),
+                    ),
+                    itemBuilder: (context) => [
+                          PopupMenuItem(
+                            child: Text("Create Group Msg"),
+                            value: 1,
+                          ),
+                        ])
+              ],
             ),
-            child: Center(
-              child: Icon(
-                Icons.add,
-                size: 14,
-              ),
-            ),
-          ),
+          ],
         ),
       ],
     );
